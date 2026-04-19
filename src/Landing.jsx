@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Menu, X, Zap, Target, Shield, Rocket, ShoppingBag } from 'lucide-react';
-import Apparel from './Apparel.jsx';
-import ComingSoon from './ComingSoon.jsx';
+import Apparel from './Apparel';
+import ComingSoon from './ComingSoon';
 
 const Landing = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
