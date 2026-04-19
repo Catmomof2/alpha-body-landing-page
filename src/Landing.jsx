@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Menu, X, Zap, Target, Shield, Rocket, ShoppingBag } from 'lucide-react';
 import Apparel from './Apparel.jsx';
+import ComingSoon from './ComingSoon.jsx';
 
 const Landing = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,6 +38,7 @@ const Landing = () => {
             <a href="#apparel" className="text-gray-300 hover:text-indigo-400 transition duration-200">Gear</a>
             <a href="#features" className="text-gray-300 hover:text-indigo-400 transition duration-200">System</a>
             <a href="#pricing" className="text-gray-300 hover:text-indigo-400 transition duration-200">Pricing</a>
+            <a href="#contact" className="text-gray-300 hover:text-indigo-400 transition duration-200">Contact</a>
           </nav>
 
           <button 
@@ -178,6 +180,9 @@ const Landing = () => {
             </div>
           </div>
         </section>
+
+        {/* 4. Coming Soon / Contact Section */}
+        <ComingSoon />
 
       </main>
 
