@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Landing from './landing.jsx';
 import Checkout from './checkout.jsx';
 // Final path resolution check
-// Force rebuild for path resolution
+// Final production build sync
 
 const App = () => {
   return (
