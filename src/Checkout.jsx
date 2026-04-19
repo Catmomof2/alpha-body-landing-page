@@ -6,22 +6,27 @@ const Checkout = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const planParam = searchParams.get('plan');
+  const itemParam = searchParams.get('item');
   
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
     plan: planParam || 'pro-elite',
+    item: itemParam || '',
   });
 
   const [submitted, setSubmitted] = useState(false);
 
   const plans = {
-    'core-access': { name: 'Core Access', price: '$49' },
-    'pro-elite': { name: 'Pro Elite', price: '$99' },
+    'core-access': { name: 'Core Access Protocol', price: '$49' },
+    'pro-elite': { name: 'Pro Elite Protocol', price: '$99' },
+    'vanguard-tee': { name: 'Vanguard Training Tee', price: '$68' },
+    'pulse-jogger': { name: 'Pulse Joggers', price: '$118' },
+    'kinetic-hoodie': { name: 'Kinetic Zip Hoodie', price: '$188' },
   };
 
-  const selectedPlan = plans[formData.plan] || plans['pro-elite'];
+  const selectedPlan = plans[formData.item] || plans[formData.plan] || plans['pro-elite'];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -72,8 +77,8 @@ const Checkout = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Form Side */}
           <div>
-            <h1 className="text-3xl font-bold mb-2">Enroll in Protocol</h1>
-            <p className="text-gray-400 mb-8">Complete the form below to start your transformation.</p>
+            <h1 className="text-3xl font-bold mb-2">{formData.item ? 'Secure Checkout' : 'Enroll in Protocol'}</h1>
+            <p className="text-gray-400 mb-8">Complete the form below to {formData.item ? 'secure your gear' : 'start your transformation'}.</p>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
@@ -129,7 +134,7 @@ const Checkout = () => {
                 type="submit"
                 className="w-full py-4 bg-emerald-400 hover:bg-emerald-300 text-gray-900 font-bold rounded-xl shadow-lg shadow-emerald-500/20 transition transform hover:scale-[1.02]"
               >
-                Complete Enrollment
+                {formData.item ? 'Place Order' : 'Complete Enrollment'}
               </button>
             </form>
           </div>
@@ -138,7 +143,7 @@ const Checkout = () => {
           <div className="bg-gray-800/50 p-8 rounded-3xl border border-gray-700 h-fit">
             <h2 className="text-xl font-bold mb-6">Order Summary</h2>
             <div className="flex justify-between items-center mb-4">
-              <span className="text-gray-400">{selectedPlan.name} Protocol</span>
+              <span className="text-gray-400">{selectedPlan.name}</span>
               <span className="font-bold">{selectedPlan.price}</span>
             </div>
             <div className="flex justify-between items-center mb-6 pb-6 border-b border-gray-700">

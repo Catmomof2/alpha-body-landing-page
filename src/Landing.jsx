@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Menu, X, Zap, Target, Shield, Rocket } from 'lucide-react';
+import { Menu, X, Zap, Target, Shield, Rocket, ShoppingBag } from 'lucide-react';
+import Apparel from './Apparel.jsx';
 
 const Landing = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,6 +34,7 @@ const Landing = () => {
           </a>
           
           <nav className="hidden md:flex space-x-8 font-medium">
+            <a href="#apparel" className="text-gray-300 hover:text-indigo-400 transition duration-200">Gear</a>
             <a href="#features" className="text-gray-300 hover:text-indigo-400 transition duration-200">System</a>
             <a href="#pricing" className="text-gray-300 hover:text-indigo-400 transition duration-200">Pricing</a>
           </nav>
@@ -82,11 +84,11 @@ const Landing = () => {
             </div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight mb-6 relative z-20">
-              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">Achieve Your Peak</span>
-              <span className="block text-indigo-400 mt-2">Alpha Body Potential.</span>
+              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 uppercase italic">Dominate Your</span>
+              <span className="block text-indigo-400 mt-2 uppercase italic">Domain.</span>
             </h1>
             <p className="max-w-3xl mx-auto text-xl text-gray-400 mb-10 font-light">
-              The elite performance system used by high-achievers to sculpt superior physique, maximize cognitive clarity, and sustain energy.
+              Engineered performance apparel and elite digital protocols for the high-achiever. Sculpt a superior physique and sustain your peak mental edge.
             </p>
             <button 
               onClick={() => {
@@ -98,6 +100,9 @@ const Landing = () => {
             </button>
           </div>
         </section>
+
+        {/* 1.5 Apparel Section */}
+        <Apparel onShopNow={(id) => navigate(`/checkout?item=${id}`)} />
 
         {/* 2. Features/Pillars Section */}
         <section id="features" className="py-20 sm:py-28 bg-gray-800 border-t border-gray-700">
