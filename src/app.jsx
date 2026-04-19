@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Landing from './Landing.jsx';
-import Checkout from './Checkout.jsx';
+import Landing from './landing.jsx';
+import Checkout from './checkout.jsx';
 // Force rebuild for path resolution
 
 const App = () => {
