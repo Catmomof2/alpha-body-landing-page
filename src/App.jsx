@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Landing from './Landing.jsx';
 import Checkout from './Checkout.jsx';
+// Force rebuild for path resolution
 
 const App = () => {
   return (
