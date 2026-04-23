@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Menu, X, Zap, Target, Shield, Rocket, ShoppingBag } from 'lucide-react';
+import { Menu, X, Zap, Target, Shield, Rocket } from 'lucide-react';
 import Apparel from './apparel.jsx';
 import ComingSoon from './comingsoon.jsx';
 
@@ -29,10 +29,10 @@ const Landing = () => {
       {/* Navigation */}
       <header className="fixed top-0 left-0 right-0 z-40 bg-gray-900/90 backdrop-blur-md shadow-lg shadow-indigo-900/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
-          <a href="#" className="flex items-center space-x-2">
+          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center space-x-2">
             <Rocket className="h-6 w-6 text-indigo-400" />
             <span className="text-2xl font-extrabold tracking-tight text-white">Alpha Body</span>
-          </a>
+          </button>
           
           <nav className="hidden md:flex space-x-8 font-medium">
             <a href="#apparel" className="text-gray-300 hover:text-indigo-400 transition duration-200">Gear</a>
@@ -116,9 +116,9 @@ const Landing = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-              {features.map((feature, index) => (
+              {features.map((feature) => (
                 <div 
-                  key={index} 
+                  key={feature.title} 
                   className="bg-gray-900 p-8 rounded-3xl shadow-2xl border border-gray-700 hover:shadow-indigo-500/30 transition duration-500 group"
                 >
                   <div className="p-3 w-fit rounded-full bg-indigo-600/20 mb-5">
@@ -142,9 +142,9 @@ const Landing = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
-              {plans.map((plan, index) => (
+              {plans.map((plan) => (
                 <div 
-                  key={index} 
+                  key={plan.id} 
                   className={`flex flex-col bg-gray-800 rounded-3xl shadow-2xl p-8 
                     ${plan.highlight 
                       ? 'border-4 border-emerald-500 ring-4 ring-emerald-500/30 transform scale-105 transition duration-500' 
@@ -157,8 +157,8 @@ const Landing = () => {
                   </p>
 
                   <ul className="flex-grow space-y-4 mb-10">
-                    {plan.features.map((feature, fIndex) => (
-                      <li key={fIndex} className="flex items-center text-gray-300 font-medium">
+                    {plan.features.map((feature) => (
+                      <li key={feature} className="flex items-center text-gray-300 font-medium">
                         <svg className="h-6 w-6 text-emerald-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
                         {feature}
                       </li>
@@ -189,8 +189,8 @@ const Landing = () => {
       <footer className="bg-gray-800 border-t border-gray-700 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500">
           <div className="flex justify-center space-x-6 mb-4">
-            <a href="#" className="text-gray-400 hover:text-indigo-400 text-sm">Privacy Policy</a>
-            <a href="#" className="text-gray-400 hover:text-indigo-400 text-sm">Terms of Service</a>
+            <button onClick={() => {}} className="text-gray-400 hover:text-indigo-400 text-sm">Privacy Policy</button>
+            <button onClick={() => {}} className="text-gray-400 hover:text-indigo-400 text-sm">Terms of Service</button>
           </div>
           <p className="text-sm">&copy; {new Date().getFullYear()} Alpha Body. All Rights Reserved.</p>
         </div>

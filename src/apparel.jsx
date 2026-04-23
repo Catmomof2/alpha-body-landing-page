@@ -1,5 +1,6 @@
 import React from 'react';
-import { ShoppingBag, ShieldCheck, Zap } from 'lucide-react';
+import PropTypes from 'prop-types';
+import { ShoppingBag, ShieldCheck } from 'lucide-react';
 
 const Apparel = ({ onShopNow }) => {
   const products = [
@@ -87,6 +88,10 @@ const Apparel = ({ onShopNow }) => {
       </div>
     </section>
   );
+};
+
+Apparel.propTypes = {
+  onShopNow: PropTypes.func.isRequired,
 };
 
 export default Apparel;
