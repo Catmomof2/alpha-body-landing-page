@@ -1,9 +1,6 @@
-import React, { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import React from 'react';
 
 const SizeGuide = () => {
-  const [expandedSize, setExpandedSize] = useState(null);
-
   const sizeData = {
     'Vanguard Training Tee': [
       { size: 'XS', chest: '32-34"', length: '27"', fit: 'Slim, athletic' },
@@ -68,7 +65,7 @@ const SizeGuide = () => {
                   </thead>
                   <tbody>
                     {sizes.map((row, idx) => (
-                      <tr key={idx} className="border-b border-gray-700 hover:bg-gray-800/50 transition">
+                      <tr key={`${product}-${row.size}`} className="border-b border-gray-700 hover:bg-gray-800/50 transition">
                         <td className="px-6 py-4 text-sm font-bold text-emerald-400">{row.size}</td>
                         <td className="px-6 py-4 text-sm text-gray-300">
                           {row.chest || row.waist}

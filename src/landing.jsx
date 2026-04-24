@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Menu, X, Zap, Target, Shield, Rocket, ShoppingBag } from 'lucide-react';
+import { Menu, X, Zap, Target, Shield, Rocket } from 'lucide-react';
 import Apparel from './apparel.jsx';
 import SizeGuide from './sizeguide.jsx';
 import ComingSoon from './comingsoon.jsx';
@@ -30,7 +30,7 @@ const Landing = () => {
       {/* Navigation */}
       <header className="fixed top-0 left-0 right-0 z-40 bg-gray-900/90 backdrop-blur-md shadow-lg shadow-indigo-900/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
-          <a href="#" className="flex items-center space-x-2">
+          <a href="#hero" className="flex items-center space-x-2">
             <Rocket className="h-6 w-6 text-indigo-400" />
             <span className="text-2xl font-extrabold tracking-tight text-white">Alpha Body</span>
           </a>
@@ -65,10 +65,10 @@ const Landing = () => {
       {isMenuOpen && (
           <div className="fixed inset-0 z-30 bg-gray-900 md:hidden pt-16" onClick={() => setIsMenuOpen(false)}>
           <div className="flex flex-col space-y-4 p-6 border-t border-gray-700">
-            <a href="#apparel" className="text-xl p-2 hover:text-indigo-400">Gear</a>
-            <a href="#size-guide" className="text-xl p-2 hover:text-indigo-400">Sizes</a>
-            <a href="#features" className="text-xl p-2 hover:text-indigo-400">System</a>
-            <a href="#pricing" className="text-xl p-2 hover:text-indigo-400">Pricing</a>
+            <a href="#apparel" className="text-xl p-2 hover:text-indigo-400" onClick={() => setIsMenuOpen(false)}>Gear</a>
+            <a href="#size-guide" className="text-xl p-2 hover:text-indigo-400" onClick={() => setIsMenuOpen(false)}>Sizes</a>
+            <a href="#features" className="text-xl p-2 hover:text-indigo-400" onClick={() => setIsMenuOpen(false)}>System</a>
+            <a href="#pricing" className="text-xl p-2 hover:text-indigo-400" onClick={() => setIsMenuOpen(false)}>Pricing</a>
             <button 
               onClick={() => handleEnroll('pro-elite')}
               className="mt-4 text-center px-4 py-3 font-bold rounded-xl text-gray-900 bg-emerald-400 hover:bg-emerald-300 transition"
@@ -193,11 +193,11 @@ const Landing = () => {
 
       </main>
 
-      <footer className="bg-gray-800 border-t border-gray-700 py-8">
+        <footer className="bg-gray-800 border-t border-gray-700 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500">
           <div className="flex justify-center space-x-6 mb-4">
-            <a href="#" className="text-gray-400 hover:text-indigo-400 text-sm">Privacy Policy</a>
-            <a href="#" className="text-gray-400 hover:text-indigo-400 text-sm">Terms of Service</a>
+            <a href="#privacy" className="text-gray-400 hover:text-indigo-400 text-sm">Privacy Policy</a>
+            <a href="#terms" className="text-gray-400 hover:text-indigo-400 text-sm">Terms of Service</a>
           </div>
           <p className="text-sm">&copy; {new Date().getFullYear()} Alpha Body. All Rights Reserved.</p>
         </div>
