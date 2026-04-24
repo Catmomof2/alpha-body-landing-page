@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Menu, X, Zap, Target, Shield, Rocket, ShoppingBag } from 'lucide-react';
 import Apparel from './apparel.jsx';
+import SizeGuide from './sizeguide.jsx';
 import ComingSoon from './comingsoon.jsx';
 
 const Landing = () => {
@@ -36,6 +37,7 @@ const Landing = () => {
           
           <nav className="hidden md:flex space-x-8 font-medium">
             <a href="#apparel" className="text-gray-300 hover:text-indigo-400 transition duration-200">Gear</a>
+            <a href="#size-guide" className="text-gray-300 hover:text-indigo-400 transition duration-200">Sizes</a>
             <a href="#features" className="text-gray-300 hover:text-indigo-400 transition duration-200">System</a>
             <a href="#pricing" className="text-gray-300 hover:text-indigo-400 transition duration-200">Pricing</a>
             <a href="#contact" className="text-gray-300 hover:text-indigo-400 transition duration-200">Contact</a>
@@ -61,8 +63,10 @@ const Landing = () => {
 
       {/* Mobile Menu Panel */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-30 bg-gray-900 md:hidden pt-16" onClick={() => setIsMenuOpen(false)}>
+          <div className="fixed inset-0 z-30 bg-gray-900 md:hidden pt-16" onClick={() => setIsMenuOpen(false)}>
           <div className="flex flex-col space-y-4 p-6 border-t border-gray-700">
+            <a href="#apparel" className="text-xl p-2 hover:text-indigo-400">Gear</a>
+            <a href="#size-guide" className="text-xl p-2 hover:text-indigo-400">Sizes</a>
             <a href="#features" className="text-xl p-2 hover:text-indigo-400">System</a>
             <a href="#pricing" className="text-xl p-2 hover:text-indigo-400">Pricing</a>
             <button 
@@ -105,6 +109,9 @@ const Landing = () => {
 
         {/* 1.5 Apparel Section */}
         <Apparel onShopNow={(id) => navigate(`/checkout?item=${id}`)} />
+
+        {/* 1.6 Size Guide Section */}
+        <SizeGuide />
 
         {/* 2. Features/Pillars Section */}
         <section id="features" className="py-20 sm:py-28 bg-gray-800 border-t border-gray-700">
