@@ -123,9 +123,9 @@ const Landing = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-              {features.map((feature, index) => (
+              {features.map((feature) => (
                 <div 
-                  key={index} 
+                  key={feature.title} 
                   className="bg-gray-900 p-8 rounded-3xl shadow-2xl border border-gray-700 hover:shadow-indigo-500/30 transition duration-500 group"
                 >
                   <div className="p-3 w-fit rounded-full bg-indigo-600/20 mb-5">
@@ -149,9 +149,9 @@ const Landing = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
-              {plans.map((plan, index) => (
+              {plans.map((plan) => (
                 <div 
-                  key={index} 
+                  key={plan.id} 
                   className={`flex flex-col bg-gray-800 rounded-3xl shadow-2xl p-8 
                     ${plan.highlight 
                       ? 'border-4 border-emerald-500 ring-4 ring-emerald-500/30 transform scale-105 transition duration-500' 
@@ -164,8 +164,8 @@ const Landing = () => {
                   </p>
 
                   <ul className="flex-grow space-y-4 mb-10">
-                    {plan.features.map((feature, fIndex) => (
-                      <li key={fIndex} className="flex items-center text-gray-300 font-medium">
+                    {plan.features.map((feature) => (
+                      <li key={feature} className="flex items-center text-gray-300 font-medium">
                         <svg className="h-6 w-6 text-emerald-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
                         {feature}
                       </li>
