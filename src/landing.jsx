@@ -30,10 +30,10 @@ const Landing = () => {
       {/* Navigation */}
       <header className="fixed top-0 left-0 right-0 z-40 bg-gray-900/90 backdrop-blur-md shadow-lg shadow-indigo-900/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
-          <a href="#hero" className="flex items-center space-x-2">
+          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center space-x-2">
             <Rocket className="h-6 w-6 text-indigo-400" />
             <span className="text-2xl font-extrabold tracking-tight text-white">Alpha Body</span>
-          </a>
+          </button>
           
           <nav className="hidden md:flex space-x-8 font-medium">
             <a href="#apparel" className="text-gray-300 hover:text-indigo-400 transition duration-200">Gear</a>

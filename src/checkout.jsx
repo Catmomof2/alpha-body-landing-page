@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { Rocket, ArrowLeft, CheckCircle2 } from 'lucide-react';
 
@@ -83,8 +83,9 @@ const Checkout = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-300">First Name</label>
+                  <label htmlFor="firstName" className="text-sm font-medium text-gray-300">First Name</label>
                   <input 
+                    id="firstName"
                     required
                     type="text" 
                     className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-indigo-500 outline-none transition"
@@ -94,8 +95,9 @@ const Checkout = () => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-300">Last Name</label>
+                  <label htmlFor="lastName" className="text-sm font-medium text-gray-300">Last Name</label>
                   <input 
+                    id="lastName"
                     required
                     type="text" 
                     className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-indigo-500 outline-none transition"
@@ -107,8 +109,9 @@ const Checkout = () => {
               </div>
               
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-300">Email Address</label>
+                <label htmlFor="email" className="text-sm font-medium text-gray-300">Email Address</label>
                 <input 
+                  id="email"
                   required
                   type="email" 
                   className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-indigo-500 outline-none transition"
@@ -119,8 +122,9 @@ const Checkout = () => {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-300">Selected Protocol</label>
+                <label htmlFor="protocol" className="text-sm font-medium text-gray-300">Selected Protocol</label>
                 <select 
+                  id="protocol"
                   className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-indigo-500 outline-none transition appearance-none"
                   value={formData.plan}
                   onChange={(e) => setFormData({...formData, plan: e.target.value})}
